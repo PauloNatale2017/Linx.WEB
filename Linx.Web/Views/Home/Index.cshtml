@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+            <form action="/Home/SignIn" method="post">
+                <button type="submit" ng-click="Authentication()" class="btn btn-primary">AUTENTICAÇÃO DE USUARIOS - LINX</button>
+            </form>
+            @*@Html.ActionLink("Autenticação de Usuario - SSP", "Index", "Home", new { @class = "btn btn-primary" })*@
+        </div>
+    </div>
+}
+else
+{
+    //var @messageUser = "SSP - " + User.Identity.Name.ToString();
+
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+            <h1> @*@messageUser*@ </h1>
+        </div>
+    </div>
+}
+
+@*<form action="/Home/Index" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-1 control-label">Usuário</label>
+            <div class="col-sm-4">
+                @*<input type="email" ng-model="model.login" class="form-control" id="inputEmail3" placeholder="Usuário">
+                @Html.TextBox("UserName")
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-1 control-label">Senha</label>
+            <div class="col-sm-4">
+                @*<input type="password" ng-model="model.password" class="form-control" id="inputPassword3" placeholder="Senha">
+                @Html.Password("Password")
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <button type="submit" ng-click="LogarConsegs()" class="btn btn-primary">Logar</button>
+            </div>
+        </div>
+    </form>*@
